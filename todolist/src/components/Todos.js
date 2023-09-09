@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeTodo } from '../features/todo/todoSlice';
 
 
+
 function Todos() {
     const todos = useSelector(state => state.todos);
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function Todos() {
   return (
     <>
         {todos.map((todo)=>(
-            <div key={todo.id}>{todo.text} <button type='delete' onClick={()=> dispatch(removeTodo(todo.id))}>remove</button></div>
+            <div className='item' key={todo.id}>{todo.text} <button type='delete' onClick={()=> dispatch(removeTodo(todo.id))}>remove</button></div>
         ))}
     </>
   )
